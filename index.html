@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exención de contribuciones para su vivienda principal</title>
+  <meta property="og:title" content="Guía: Exención de contribuciones para vivienda principal">
+  <meta property="og:description" content="Revise los requisitos y cómo solicitar la exención en el SII si tiene 65 años o más.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://milkoyunusic.github.io/Exencion-Contribuciones/">
+  <meta property="og:image" content="https://milkoyunusic.github.io/Exencion-Contribuciones/portada-whatsapp.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --fondo: #e8e3d9;
+      --papel: #f5f1e8;
+      --suave: #ede8de;
+      --texto: #182026;
+      --secundario: #2f3b45;
+      --borde: #d2cabd;
+      --azul: #1b4965;
+      --azul-oscuro: #13293d;
+      --aviso: #fff5df;
+      --aviso-borde: #9c560d;
+      --informacion: #eaf2f6;
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+
+    body {
+      margin: 0;
+      padding: clamp(10px, 3vw, 24px);
+      background: var(--fondo);
+      color: var(--texto);
+      font: 1.125rem/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    .hoja {
+      max-width: 38rem;
+      margin: 0 auto;
+      background: var(--papel);
+      border: 1px solid var(--borde);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgb(24 32 38 / 7%);
+    }
+
+    .banda {
+      padding: .4rem 1rem;
+      background: var(--azul-oscuro);
+      color: white;
+      text-align: center;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    header, footer { padding: clamp(1rem, 4vw, 1.75rem); }
+    h1, h2, h3 { line-height: 1.25; margin: 0 0 .75rem; }
+    h1 { font-size: clamp(1.65rem, 5vw, 2rem); }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.125rem; }
+    p { margin: 0 0 .85rem; }
+    ul, ol { margin: .5rem 0 1rem; padding-inline-start: 1.4rem; }
+    li + li { margin-top: .45rem; }
+
+    a {
+      color: var(--azul);
+      text-underline-offset: .18em;
+    }
+
+    a:hover { color: var(--azul-oscuro); }
+
+    :is(a, button):focus-visible {
+      outline: 3px solid var(--azul);
+      outline-offset: 3px;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: .7rem 1rem;
+      border: 1px solid transparent;
+      border-radius: .7rem;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .principal {
+      min-height: 56px;
+      background: var(--azul);
+      color: white;
+    }
+
+    .principal:hover { background: var(--azul-oscuro); color: white; }
+    .secundario { background: var(--papel); border-color: #817d74; }
+    .secundario:hover { background: var(--suave); }
+    .alternativo { background: #e4dfd6; border-color: #afa99e; }
+    .alternativo:hover { background: #d9d3c8; }
+
+    .accion-enlace {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: .35rem .5rem;
+      font-weight: 650;
+      text-align: center;
+    }
+
+    .boton-texto {
+      min-height: 44px;
+      padding: .3rem .45rem;
+      border: 0;
+      background: transparent;
+      color: var(--azul);
+      text-decoration: underline;
+      text-underline-offset: .18em;
+    }
+
+    .acciones { display: grid; gap: .55rem; margin-top: 1rem; }
+
+    .fila {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .4rem .75rem;
+    }
+
+    .detalle { color: var(--secundario); font-size: 1rem; }
+
+    .recuadro {
+      margin: .85rem 0;
+      padding: .85rem 1rem;
+      border: 1px solid var(--borde);
+      border-radius: .65rem;
+      background: var(--suave);
+    }
+
+    .recuadro > :last-child { margin-bottom: 0; }
+    .aviso { background: var(--aviso); border-left: 4px solid var(--aviso-borde); }
+    .informacion { background: var(--informacion); border-left: 4px solid var(--azul); }
+
+    #cuestionario { margin: 0 clamp(.85rem, 4vw, 1.75rem) 1.4rem; }
+
+    .tarjeta {
+      padding: clamp(.85rem, 3vw, 1.25rem);
+      background: var(--suave);
+      border: 1px solid var(--borde);
+      border-radius: .9rem;
+    }
+
+    .barra-cuestionario {
+      margin-bottom: .9rem;
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .navegacion {
+      margin-top: 1rem;
+      padding-top: .35rem;
+      border-top: 1px solid var(--borde);
+    }
+
+    .seccion { border-top: 1px solid var(--borde); }
+    .seccion h2 { margin: 0; }
+
+    .abrir-seccion {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      width: 100%;
+      min-height: 58px;
+      padding: .85rem clamp(1rem, 4vw, 1.75rem);
+      border: 0;
+      background: transparent;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .abrir-seccion:hover,
+    .abrir-seccion[aria-expanded="true"] { background: var(--suave); }
+    .abrir-seccion:focus-visible { outline-offset: -4px; }
+
+    .chevron {
+      flex: 0 0 auto;
+      width: .65rem;
+      height: .65rem;
+      margin-right: .25rem;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+    }
+
+    .abrir-seccion[aria-expanded="true"] .chevron { transform: rotate(225deg); }
+    .panel { padding: 1rem clamp(1rem, 4vw, 1.75rem); }
+
+    .opcion {
+      padding: .05rem .25rem;
+      border-radius: .25rem;
+      background: var(--suave);
+      font-weight: 650;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      background: var(--suave);
+      border-top: 1px solid var(--borde);
+      font-size: 1rem;
+    }
+
+    footer p:last-child { margin-bottom: 0; }
+
+    @media print {
+      body { padding: 0; background: white; color: black; font-size: 10pt; }
+      .hoja { max-width: none; border: 0; border-radius: 0; box-shadow: none; }
+      .banda, .no-imprimir, #cuestionario, .chevron { display: none !important; }
+      .panel[hidden] { display: block !important; }
+      header, footer, .panel, .abrir-seccion { padding: .35rem 0; }
+      .abrir-seccion { min-height: 0; }
+      .recuadro { padding: .4rem .65rem; break-inside: avoid; }
+      h1, h2, h3 { break-after: avoid; }
+      footer, .detalle { font-size: 9pt; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hoja">
+    <div class="banda">Guía de orientación · Chile</div>
+
+    <header>
+      <h1>Exención de contribuciones para su vivienda principal</h1>
+      <p>
+        Si tiene 65 años o más, puede solicitar al SII la exención de contribuciones
+        por la vivienda donde vive habitualmente, siempre que cumpla los requisitos.
+      </p>
+
+      <p class="recuadro aviso">
+        Presente la solicitud hasta el <strong>31 de diciembre de 2026</strong>,
+        inclusive, para que la exención pueda aplicarse desde el
+        <strong>1 de enero de 2027</strong>.
+      </p>
+
+      <div class="acciones no-imprimir">
+        <button id="iniciar" class="boton principal" type="button"
+                aria-expanded="false" aria-controls="cuestionario">
+          Revisar si puedo solicitarla
+        </button>
+        <a class="accion-enlace" href="https://www.sii.cl/servicios_online/1048-4737.html"
+           target="_blank" rel="noopener noreferrer">
+          Hacer el trámite en el SII&nbsp;<span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="fila detalle no-imprimir">
+        <span>Trámite gratuito</span>
+        <button id="imprimir" class="boton-texto" type="button">Imprimir guía</button>
+      </div>
+    </header>
+
+    <section id="cuestionario" aria-label="Cuestionario de orientación" hidden>
+      <div class="tarjeta">
+        <div class="fila barra-cuestionario">
+          <strong id="progreso" class="detalle"></strong>
+          <button id="cerrar" class="boton-texto" type="button">Cerrar</button>
+        </div>
+        <div id="contenido"></div>
+      </div>
+    </section>
+
+    <main>
+      <section class="seccion">
+        <h2>
+          <button class="abrir-seccion" type="button" aria-expanded="false"
+                  aria-controls="requisitos">
+            Ver todos los requisitos <span class="chevron" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div id="requisitos" class="panel" hidden>
+          <p>
+            La exención se solicita mediante una declaración jurada
+            e identifica una sola vivienda principal en Chile.
+          </p>
+          <ul>
+            <li><strong>Edad.</strong> Tener 65 años o más cuando presente la declaración.</li>
+            <li>
+              <strong>Propiedad y residencia habitual.</strong> Ser una persona natural,
+              ser dueño o copropietario de la vivienda y vivir habitualmente en ella.
+              La exención no exige un tope de ingresos ni de avalúo fiscal.
+            </li>
+            <li>
+              <strong>Pagos al día.</strong> Tener al día los derechos de aseo
+              municipal y las contribuciones de la vivienda correspondientes
+              al año anterior a aquel en que se acoge a la exención, cuando corresponda.
+            </li>
+          </ul>
+
+          <p class="recuadro aviso">
+            <strong>Derechos de aseo municipal.</strong> La exención cubre las
+            contribuciones. Los derechos de aseo se siguen pagando cuando corresponda,
+            aunque aparezcan en la misma boleta.
+          </p>
+
+          <h3>Situaciones especiales que conviene revisar</h3>
+          <ul>
+            <li>
+              <strong>Copropiedad y herencia.</strong> La regla general exige al
+              menos el 50% de los derechos. Si los adquirió por herencia de su
+              cónyuge o conviviente civil, el mínimo es del 25%.
+            </li>
+            <li>
+              <strong>Uso mixto.</strong> Si la propiedad tiene uso habitacional
+              y otro uso, al menos el 50% de la superficie construida debe estar
+              destinado a vivienda.
+            </li>
+            <li>
+              <strong>Convenio de pago.</strong> Consulte al SII cómo acreditar
+              el cumplimiento si tiene un convenio de pago vigente.
+            </li>
+            <li>
+              <strong>Adquisición reciente a un familiar o persona relacionada.</strong>
+              Revise las restricciones del SII antes de presentar la solicitud.
+            </li>
+            <li>
+              <strong>Estacionamientos y bodegas.</strong> Puede incluir los que
+              estén en la misma dirección y asociados al uso de su vivienda principal.
+            </li>
+          </ul>
+
+          <a href="https://www.sii.cl/preguntas_frecuentes/aval_contrib_bbrr/arbol_faqs_aval_contrib_bbrr_2605.htm"
+             target="_blank" rel="noopener noreferrer">Revisar las preguntas frecuentes del SII ↗</a>
+        </div>
+      </section>
+
+      <section class="seccion">
+        <h2>
+          <button class="abrir-seccion" type="button" aria-expanded="false"
+                  aria-controls="paso-a-paso">
+            Qué necesito y cómo hago el trámite <span class="chevron" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div id="paso-a-paso" class="panel" hidden>
+          <div class="recuadro">
+            <h3>Qué tener a mano antes de entrar</h3>
+            <ul>
+              <li><strong>Su clave de acceso.</strong> ClaveÚnica o Clave Tributaria del SII.</li>
+              <li>
+                <strong>El rol de la propiedad.</strong> Es el número con que el SII
+                identifica su vivienda. Puede encontrarlo en su boleta de contribuciones.
+              </li>
+              <li>
+                <strong>Si la vivienda no figura a su nombre en el SII.</strong>
+                Tenga a mano su certificado de dominio vigente o su escritura actualizada.
+              </li>
+            </ul>
+          </div>
+
+          <h3>Pasos para ingresar la solicitud en línea</h3>
+          <ol>
+            <li>
+              Abra la página de la
+              <a href="https://www.sii.cl/servicios_online/1048-4737.html"
+                 target="_blank" rel="noopener noreferrer">declaración jurada de vivienda principal</a>
+              y pulse <span class="opcion">Solicítala aquí</span>. Ingrese con sus credenciales.
+            </li>
+            <li>
+              Si la vivienda figura a su nombre, seleccione
+              <span class="opcion">Mis Propiedades</span> y marque su rol.
+            </li>
+            <li>
+              Si la vivienda no aparece a su nombre, seleccione
+              <span class="opcion">Otras propiedades</span>, búsquela y adjunte
+              el documento de dominio que le solicite el SII.
+            </li>
+            <li>
+              Si corresponde, agregue los roles de los estacionamientos y bodegas
+              asociados a su vivienda.
+            </li>
+            <li>
+              En <strong>Grupo</strong> elija
+              <span class="opcion">Declaración jurada vivienda principal</span>.
+              En <strong>Materia</strong> elija
+              <span class="opcion">Solicitud y declaración jurada exención vivienda principal</span>.
+            </li>
+            <li>
+              Revise el fundamento y los datos de su declaración. Luego grabe
+              y envíe la solicitud en el portal del SII.
+            </li>
+          </ol>
+
+          <div class="recuadro informacion">
+            <h3>Comprobante y resolución</h3>
+            <p>
+              El comprobante acredita el ingreso de la solicitud. El SII comunicará
+              la aprobación o el rechazo mediante una resolución. Puede consultar
+              el estado en el portal del SII.
+            </p>
+          </div>
+
+          <div class="acciones">
+            <a class="boton principal" href="https://www.sii.cl/servicios_online/1048-4737.html"
+               target="_blank" rel="noopener noreferrer">Ingresar declaración en el SII ↗</a>
+            <a class="accion-enlace"
+               href="https://www.sii.cl/destacados/ley_reconstruccion/_static/documents/pap_2026.pdf"
+               target="_blank" rel="noopener noreferrer">Ver la guía oficial en PDF ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion">
+        <h2>
+          <button class="abrir-seccion" type="button" aria-expanded="false"
+                  aria-controls="ayuda">
+            Dónde me pueden ayudar en persona <span class="chevron" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div id="ayuda" class="panel" hidden>
+          <p>
+            Si no tiene clave, no usa internet o prefiere hacer el trámite con ayuda,
+            puede acudir a una oficina del Servicio de Impuestos Internos.
+          </p>
+          <div class="recuadro">
+            <h3>Cómo encontrar su oficina</h3>
+            <p>
+              <a href="https://www.sii.cl/sobre_el_sii/oficinas_y_horarios.html"
+                 target="_blank" rel="noopener noreferrer">Consultar oficinas y horarios del SII ↗</a>
+            </p>
+            <p>Mesa de Ayuda del SII <a href="tel:+56223951115">2 2395 1115</a>.</p>
+          </div>
+          <p>
+            Lleve su cédula de identidad y, si la tiene, una boleta de contribuciones
+            donde figure el rol. Si la vivienda no aparece a su nombre en el SII,
+            lleve su certificado de dominio vigente o escritura actualizada.
+          </p>
+        </div>
+      </section>
+
+      <section class="seccion">
+        <h2>
+          <button class="abrir-seccion" type="button" aria-expanded="false"
+                  aria-controls="rebaja">
+            Ya tengo una rebaja de contribuciones <span class="chevron" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <div id="rebaja" class="panel" hidden>
+          <p>Si recibe el <strong>Beneficio Persona Mayor (BAM)</strong>, revise su situación.</p>
+          <ul>
+            <li>
+              <strong>Rebaja en otra propiedad.</strong> Consulte si puede mantenerla
+              para esa propiedad según los requisitos del BAM.
+            </li>
+            <li>
+              <strong>Rebaja del 50% en su vivienda principal.</strong> La nueva
+              exención puede cubrir las contribuciones que todavía paga, si el SII la otorga.
+            </li>
+            <li>
+              <strong>Rebaja del 100% en su vivienda principal.</strong> Si hoy no
+              paga contribuciones por esa vivienda, la exención no le genera
+              un ahorro inmediato en la boleta.
+            </li>
+          </ul>
+          <p class="recuadro">
+            Si el SII otorga la nueva exención, el BAM deja de aplicarse a esa misma
+            vivienda. Si la solicitud es rechazada, el BAM se mantiene mientras
+            siga cumpliendo sus condiciones.
+          </p>
+          <a href="https://www.sii.cl/preguntas_frecuentes/aval_contrib_bbrr/001_165_9012.htm"
+             target="_blank" rel="noopener noreferrer">Leer la explicación del SII sobre el BAM ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h2>Fuentes oficiales</h2>
+      <ul>
+        <li>
+          <a href="https://www.sii.cl/destacados/ley_reconstruccion/medidas_tributarias/impuesto_territorial/"
+             target="_blank" rel="noopener noreferrer">Ficha de la exención del SII ↗</a>
+        </li>
+        <li>
+          <a href="https://www.sii.cl/preguntas_frecuentes/aval_contrib_bbrr/arbol_faqs_aval_contrib_bbrr_2605.htm"
+             target="_blank" rel="noopener noreferrer">Preguntas frecuentes del SII ↗</a>
+        </li>
+        <li>
+          <a href="https://www.sii.cl/noticias/2026/111126noti01pcr.htm"
+             target="_blank" rel="noopener noreferrer">Comunicado del SII sobre el plazo y la renovación ↗</a>
+        </li>
+        <li>
+          <a href="https://www.sii.cl/destacados/ley_reconstruccion/_static/documents/pap_2026.pdf"
+             target="_blank" rel="noopener noreferrer">Guía oficial del trámite en PDF ↗</a>
+        </li>
+        <li>
+          <a href="https://www.bcn.cl/leychile/navegar?idNorma=1229250"
+             target="_blank" rel="noopener noreferrer">Ley 21.850 en la Biblioteca del Congreso Nacional ↗</a>
+        </li>
+      </ul>
+      <p>
+        <strong>Renovación.</strong> Según el SII, una vez otorgada la exención,
+        se renueva automáticamente mientras se mantengan los requisitos.
+      </p>
+      <p>Guía de orientación. El cuestionario no solicita ni almacena datos personales.</p>
+<div class="acciones no-imprimir">
+        <p><strong>Elaborado por Milko Yunusic</strong></p>
+        <a class="boton secundario"
+           href="https://wa.me/56979382147?text=Hola%2C%20Milko.%20Vi%20tu%20gu%C3%ADa%20sobre%20la%20exenci%C3%B3n%20de%20contribuciones%20y%20tengo%20una%20consulta.">
+          Escríbeme por WhatsApp
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const tramiteUrl = 'https://www.sii.cl/servicios_online/1048-4737.html';
+    const opciones = ['Sí', 'No', 'No estoy seguro'];
+
+    const preguntas = [
+      {
+        texto: '¿Tiene 65 años o más al momento de presentar la declaración?',
+        resumen: 'Tiene 65 años o más',
+        revisar: {
+          No: 'Espere a cumplir los 65 años antes de presentar la declaración jurada.',
+          'No estoy seguro': 'Confirme que tendrá 65 años cumplidos al presentar la declaración.'
+        }
+      },
+      {
+        texto: '¿Es dueño o copropietario de esta vivienda y vive habitualmente en ella?',
+        resumen: 'Es dueño o copropietario y vive habitualmente allí',
+        revisar: {
+          No: 'Revise el requisito de ser dueño o copropietario y vivir habitualmente en la propiedad.',
+          'No estoy seguro': 'Revise su inscripción de dominio. Si hay copropiedad, confirme si cumple el porcentaje exigido. El usufructo por sí solo no acredita dominio.'
+        }
+      },
+      {
+        texto: '¿Están al día las contribuciones del año anterior y los derechos de aseo municipal de esta vivienda?',
+        resumen: 'Tiene al día las contribuciones y los derechos de aseo',
+        revisar: {
+          No: 'Revise cómo regularizar los pagos pendientes o consulte al SII si tiene un convenio de pago vigente.',
+          'No estoy seguro': 'Consulte en Tesorería si hay cuotas pendientes de contribuciones del año anterior y en su municipalidad si hay deuda de aseo.'
+        }
+      },
+      {
+        texto: '¿Paga contribuciones por esta vivienda?',
+        ayuda: 'Si su cuenta solo incluye el cobro de aseo municipal, responda «No».',
+        resumen: 'Paga contribuciones por esta vivienda'
+      }
+    ];
+
+    const formulario = document.getElementById('cuestionario');
+    const contenido = document.getElementById('contenido');
+    const progreso = document.getElementById('progreso');
+    const iniciar = document.getElementById('iniciar');
+    const secciones = [...document.querySelectorAll('.abrir-seccion')];
+
+    let respuestas = [];
+    let paso = 0;
+    let mostrarAyuda = false;
+    let enResumen = false;
+    let editandoResumen = false;
+
+    function getSummary(answers) {
+      const pending = [0, 1, 2].filter(index => answers[index] !== 'Sí');
+      const savings = {
+        No: 'Si actualmente no paga contribuciones por esta vivienda, la exención no le generaría un ahorro inmediato.',
+        'No estoy seguro': 'Revise su último aviso de pago para ver si incluye un cobro de contribuciones.'
+      };
+      return { pending, savingsNote: savings[answers[3]] || '' };
+    }
+
+    function enfocarPregunta() {
+      contenido.querySelector('h2').focus();
+    }
+
+    function mostrarPregunta() {
+      enResumen = false;
+      const pregunta = preguntas[paso];
+      const respuesta = respuestas[paso];
+      progreso.textContent = `Pregunta ${paso + 1} de ${preguntas.length}`;
+
+      contenido.innerHTML = `
+        <h2 tabindex="-1">${pregunta.texto}</h2>
+        ${pregunta.ayuda ? `<p class="detalle">${pregunta.ayuda}</p>` : ''}
+        ${respuesta ? `<p class="detalle">Respuesta marcada: <strong>${respuesta}</strong></p>` : ''}
+        ${mostrarAyuda ? `
+          <div class="recuadro aviso">
+            <p>${pregunta.revisar['No estoy seguro']}</p>
+            <button class="boton principal" type="button" data-accion="continuar">
+              ${editandoResumen ? 'Volver al resumen' : 'Continuar'}
+            </button>
+          </div>
+        ` : ''}
+        <div class="acciones">
+          ${opciones.map((opcion, indice) => `
+            <button class="boton ${['principal', 'secundario', 'alternativo'][indice]}"
+                    type="button" data-respuesta="${opcion}">
+              ${opcion}
+            </button>
+          `).join('')}
+        </div>
+        <div class="fila navegacion">
+          ${editandoResumen ? `
+            <button class="boton-texto" type="button" data-accion="cancelar">Cancelar cambio</button>
+          ` : paso > 0 ? `
+            <button class="boton-texto" type="button" data-accion="volver">Volver</button>
+          ` : '<span></span>'}
+          <button class="boton-texto" type="button" data-accion="reiniciar">Empezar de nuevo</button>
+        </div>
+      `;
+      enfocarPregunta();
+    }
+
+    function mostrarResumen() {
+      enResumen = true;
+      editandoResumen = false;
+      mostrarAyuda = false;
+      const { pending, savingsNote } = getSummary(respuestas);
+      progreso.textContent = 'Orientación y siguientes pasos';
+
+      const orientacion = pending.length > 0 ? `
+        <div class="recuadro aviso">
+          <h3>Qué debe revisar antes de continuar</h3>
+          <ul>
+            ${pending.map(indice => `
+              <li>${preguntas[indice].revisar[respuestas[indice]]}</li>
+            `).join('')}
+          </ul>
+        </div>
+      ` : `
+        <div class="recuadro informacion">
+          <h3>Siguiente paso recomendado</h3>
+          <p>
+            Revise los requisitos completos en el SII. Si los cumple, prepare
+            su clave de acceso, el rol de la propiedad y los documentos que
+            correspondan para ingresar su declaración jurada.
+          </p>
+        </div>
+      `;
+
+      contenido.innerHTML = `
+        <h2 tabindex="-1">Qué revisar y cómo seguir</h2>
+        <p class="detalle">
+          Esta guía le ayuda a revisar su situación.
+          El Servicio de Impuestos Internos resuelve su solicitud.
+        </p>
+        ${orientacion}
+        ${savingsNote ? `
+          <div class="recuadro">
+            <h3>Posible ahorro</h3>
+            <p>${savingsNote}</p>
+          </div>
+        ` : ''}
+        <div class="recuadro">
+          <h3>Sus respuestas</h3>
+          <ol>
+            ${preguntas.map((pregunta, indice) => `
+              <li>
+                ${pregunta.resumen}: <strong>${respuestas[indice]}</strong>
+                <button class="boton-texto" type="button"
+                        data-editar="${indice}" aria-label="Cambiar respuesta ${indice + 1}">
+                  Cambiar
+                </button>
+              </li>
+            `).join('')}
+          </ol>
+        </div>
+        <div class="acciones">
+          <a class="boton principal" href="${tramiteUrl}" target="_blank"
+             rel="noopener noreferrer">Hacer el trámite en el SII ↗</a>
+          <button class="boton secundario" type="button" data-accion="requisitos">
+            Ver todos los requisitos
+          </button>
+          <button class="boton secundario" type="button" data-accion="paso-a-paso">
+            Ver qué necesito y el paso a paso
+          </button>
+          <button class="boton-texto" type="button" data-accion="reiniciar">
+            Volver a responder todo
+          </button>
+        </div>
+      `;
+      enfocarPregunta();
+    }
+
+    function avanzar() {
+      mostrarAyuda = false;
+      if (editandoResumen || paso === preguntas.length - 1) {
+        mostrarResumen();
+      } else {
+        paso += 1;
+        mostrarPregunta();
+      }
+    }
+
+    function reiniciar() {
+      respuestas = [];
+      paso = 0;
+      mostrarAyuda = false;
+      editandoResumen = false;
+      mostrarPregunta();
+    }
+
+    function cerrarCuestionario() {
+      formulario.hidden = true;
+      iniciar.setAttribute('aria-expanded', 'false');
+      iniciar.focus();
+    }
+
+    function cambiarSeccion(id, abrir) {
+      secciones.forEach(boton => {
+        const panel = document.getElementById(boton.getAttribute('aria-controls'));
+        const visible = abrir && panel.id === id;
+        panel.hidden = !visible;
+        boton.setAttribute('aria-expanded', String(visible));
+      });
+    }
+
+    iniciar.addEventListener('click', () => {
+      if (!formulario.hidden) {
+        cerrarCuestionario();
+        return;
+      }
+      formulario.hidden = false;
+      iniciar.setAttribute('aria-expanded', 'true');
+      if (enResumen) {
+        mostrarResumen();
+      } else {
+        mostrarPregunta();
+      }
+      formulario.scrollIntoView({ block: 'start' });
+    });
+
+    document.getElementById('cerrar').addEventListener('click', cerrarCuestionario);
+    document.getElementById('imprimir').addEventListener('click', () => window.print());
+
+    secciones.forEach(boton => {
+      boton.addEventListener('click', () => {
+        cambiarSeccion(
+          boton.getAttribute('aria-controls'),
+          boton.getAttribute('aria-expanded') === 'false'
+        );
+      });
+    });
+
+    contenido.addEventListener('click', evento => {
+      const boton = evento.target.closest('button');
+      if (!boton) return;
+
+      if (boton.dataset.respuesta) {
+        const respuesta = boton.dataset.respuesta;
+        if (respuesta === 'No estoy seguro' && preguntas[paso].revisar) {
+          mostrarAyuda = true;
+          mostrarPregunta();
+          contenido.querySelector('[data-accion="continuar"]').focus();
+        } else {
+          respuestas[paso] = respuesta;
+          avanzar();
+        }
+        return;
+      }
+
+      if (boton.dataset.editar !== undefined) {
+        paso = Number(boton.dataset.editar);
+        editandoResumen = true;
+        mostrarAyuda = false;
+        mostrarPregunta();
+        return;
+      }
+
+      switch (boton.dataset.accion) {
+        case 'continuar':
+          respuestas[paso] = 'No estoy seguro';
+          avanzar();
+          break;
+        case 'volver':
+          paso -= 1;
+          mostrarAyuda = false;
+          mostrarPregunta();
+          break;
+        case 'cancelar':
+          mostrarResumen();
+          break;
+        case 'reiniciar':
+          reiniciar();
+          break;
+        case 'requisitos':
+        case 'paso-a-paso': {
+          const id = boton.dataset.accion;
+          cambiarSeccion(id, true);
+          const encabezado = secciones.find(item => item.getAttribute('aria-controls') === id);
+          encabezado.focus();
+          encabezado.scrollIntoView({ block: 'start' });
+          break;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
